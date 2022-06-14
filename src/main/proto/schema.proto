@@ -1,0 +1,19 @@
+syntax = "proto3";
+ 
+package userApp;
+ 
+service UserCredCheck{
+ 
+  rpc login(LoginReq) returns (LoginResp) {}
+  rpc logout(Empty) returns (LoginResp) {}
+}
+  message LoginReq{
+  string username = 1;
+  string password = 2;
+ }
+  message LoginResp{
+  string ResponseMessage = 1;
+  int32 ResponseCode = 2;
+ }
+ message Empty{
+      }
