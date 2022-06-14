@@ -1,0 +1,11 @@
+syntax = "proto3";
+ 
+package heartbeat;
+ 
+service HeartBeat{
+   rpc Beats(Counter) returns (stream Counter) {}
+}
+ 
+message Counter{
+   int32 count =1 ;
+}
