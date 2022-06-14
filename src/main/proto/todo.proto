@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package  todoapp;
+
+service Todo{
+  rpc addTodo (TodoItem) returns (TodoItem) {}
+  rpc getTodos(Void) returns (TodoItems) {}
+}
+
+message Void {}
+
+message TodoItem{
+  int32 id =1;
+  string task =2;
+  bool done=3;
+}
+
+message TodoItems{
+  repeated TodoItem todos =1;
+}
